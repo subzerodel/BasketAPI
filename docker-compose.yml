@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  basketdb:
+    image: redis
+  basketapi:
+    image: ${DOCKER_REGISTRY-}basketapi
+    build:
+      context: .
+      dockerfile: BasketAPI/Dockerfile
